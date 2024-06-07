@@ -7,8 +7,14 @@ A tiny Autograd engine (with a bite! :)). Implements backpropagation (reverse-mo
 
 ### Installation
 
+Install [pipenv](https://pipenv.pypa.io/) and [graphviz](https://graphviz.org/) and then run the following commands:
+
 ```bash
-pip install micrograd
+# install all of micrograd's Python dependencies into a virtual environment
+PIPENV_VENV_IN_PROJECT=1 pipenv install
+
+# run Jupyter to explore micrograd's notebooks
+pipenv run jupyter lab
 ```
 
 ### Example usage
@@ -58,10 +64,10 @@ dot = draw_dot(y)
 
 ### Running tests
 
-To run the unit tests you will have to install [PyTorch](https://pytorch.org/), which the tests use as a reference for verifying the correctness of the calculated gradients. Then simply:
+Verify the correctness of the calculated gradients using [PyTorch](https://pytorch.org/) as a reference:
 
 ```bash
-python -m pytest
+pipenv run python -m pytest
 ```
 
 ### License
